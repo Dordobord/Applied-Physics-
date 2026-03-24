@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class Trampoline : MonoBehaviour
 {
-    [SerializeField] private float force = 15f;
+    private float force = 50f;
     [SerializeField] Rigidbody player;
 
     private Rigidbody rb;

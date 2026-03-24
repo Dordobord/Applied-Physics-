@@ -5,6 +5,7 @@ public class PlayerMovement : MonoBehaviour
     public float maxSpeed = 6f;
     public float acceleration = 15f;
     public float jumpForce = 6f;
+    public float rotSpeed = 10f;
 
     Rigidbody rb;
     Vector3 inputDirection;
@@ -22,6 +23,12 @@ public class PlayerMovement : MonoBehaviour
             0,
             Input.GetAxis("Vertical"));
 
+        // if (inputDirection != Vector3.zero)
+        // {
+        //     Quaternion targetRot = Quaternion.LookRotation(inputDirection);
+        //     transform.rotation = Quaternion.RotateTowards(transform.rotation, targetRot,  rotSpeed * Time.deltaTime); 
+        // }
+
         if (Input.GetKeyDown(KeyCode.Space) && isGrounded)
         {
             Jump();
@@ -31,6 +38,7 @@ public class PlayerMovement : MonoBehaviour
     void FixedUpdate()
     {
         Move();
+        
     }
 
     private void Move()
